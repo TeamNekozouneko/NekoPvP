@@ -1,0 +1,30 @@
+name: NekoPvP
+version: '${project.version}'
+main: com.nekozouneko.nekopvp.nekopvp.NekoPvP
+api-version: 1.18
+authors: [ Taitaitatata ]
+commands:
+  start:
+    aliases: ["start-pvp", "ゲーム開始"]
+    description: "ゲームを開始します。"
+    permission: NekoPvP.cmd.start
+    permission-message: "§c権限が不足しています。"
+    usage: "/<command> [second : int]"
+  nekopvp:
+    aliases: ["np"]
+    description: "プラグインコマンド"
+    permission: NekoPvP.cmd.nekopvp
+    permission-message: "§c権限が不足しています。"
+    usage: "/<command> reload"
+  randomize:
+    aliases: ["振り分け", "random-team"]
+    description: "チームの振り分けを実行します。"
+    permission: NekoPvP.cmd.randomize
+    permission-message: "§c権限が不足しています。"
+    usage: "/<command>"
+  teambar:
+    aliases: ["チームバー"]
+    description: "チーム状況のバーを表示します。"
+    permission: NekoPvP.cmd.teambar
+    permission-message: "§c権限が不足しています。"
+    usage: "/<command>"
