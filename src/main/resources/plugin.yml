@@ -1,4 +1,6 @@
 name: NekoPvP
+description: "攻城戦やPvP向けのプラグインです。 "
+url: "https://nekozouneko.com/discord/"
 version: '${project.version}'
 main: com.nekozouneko.nekopvp.nekopvp.NekoPvP
 api-version: 1.18
