@@ -11,7 +11,7 @@ commands:
     description: "ゲームを開始します。"
     permission: NekoPvP.cmd.start
     permission-message: "§c権限が不足しています。"
-    usage: "/<command> [second : int]"
+    usage: "/<command>"
   nekopvp:
     aliases: ["np"]
     description: "プラグインコマンド"
@@ -30,3 +30,9 @@ commands:
     permission: NekoPvP.cmd.teambar
     permission-message: "§c権限が不足しています。"
     usage: "/<command>"
+  countdown:
+    aliases: ["カウントダウン"]
+    description: "カウントダウンを実行します。"
+    permission: NekoPvP.cmd.countdown
+    permission-message: "§c権限が不足しています。"
+    usage: "/<command> [second : int]"

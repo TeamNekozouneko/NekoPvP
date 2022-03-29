@@ -1,4 +1,31 @@
 # +-----------------------------+
+# |  ゲーム設定 - Game Settings   |
+# +-----------------------------+
+
+startCmd:
+  coutdown: 10
+
+onDied:
+  # 死亡時設定 - onDied Settings
+  #   enabled: (Boolean)
+  #     有効化するか?
+  #   triggered: (String)
+  #     プレイヤーがキルされれば何を実行するか
+  #     > GAMEMODE
+  #       ゲームモードを指定 (valueにゲームモードを記述)
+  #     > COMMAND
+  #       死んだらコマンドを実行 (valueにコマンドを記述)
+  #   value: (String)
+  #     上のtriggerdで指定したものによって変わります
+  #     > 例:
+  #       COMMAND -> give @a stick 1 -> 棒を一個全員に
+  #       GAMEMODE -> SPECTATOR (他にADVENTURE / CREATIVE / SURVIVAL を指定できます。)
+  enabled: false
+
+  triggered: "GAMEMODE"
+  value: "SPECTATOR"
+
+# +-----------------------------+
 # |  チーム設定 - Team Settings   |
 # +-----------------------------+
 
