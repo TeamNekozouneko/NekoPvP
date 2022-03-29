@@ -13,19 +13,29 @@ public class timer implements Runnable {
     private long second;
     private JavaPlugin plugin;
     private BukkitTask task;
-    public timer(long second, JavaPlugin plugin) {
+    private Boolean isGame;
+    public timer(long second, JavaPlugin plugin, Boolean isGame) {
         this.second = second;
         this.plugin = plugin;
+        this.isGame = isGame;
     }
 
     @Override
     public void run() {
-        if (second <= 0) {
-            for (Player p:Bukkit.getOnlinePlayers()) {
-                p.sendTitle(" ", this.plugin.getConfig().getString("translate.start"), 5, 60, 5);
-                p.playSound(p, Sound.BLOCK_ANVIL_DESTROY, 1L,1L);
+        if (this.second <= 0) {
+            if (this.isGame) {
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    p.sendTitle(" ", this.plugin.getConfig().getString("translate.start"), 5, 60, 5);
+                    p.playSound(p, Sound.BLOCK_ANVIL_DESTROY, 1L, 1L);
+                }
+                this.task.cancel();
+            } else {
+                for (Player p:Bukkit.getOnlinePlayers()) {
+                    p.sendTitle(" ", String.valueOf(second), 0, 60, 5);
+                    p.playSound(p, Sound.UI_BUTTON_CLICK, 1L,1L);
+                }
+                this.task.cancel();
             }
-            task.cancel();
         } else {
             for (Player p:Bukkit.getOnlinePlayers()) {
                 p.sendTitle(" ", String.valueOf(second), 0, 60, 0);
@@ -33,7 +43,7 @@ public class timer implements Runnable {
             }
         }
 
-        second--;
+        this.second--;
     }
 
     public void setTask(BukkitTask task) {
