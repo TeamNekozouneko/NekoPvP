@@ -30,24 +30,28 @@ onDied:
 # +-----------------------------+
 
 team_one:
+  teleport: false
   x: 0
   y: 100
   z: 0
 
   id: red
 
-  defaults: [
+  enable_cmd: false
+  commands: [
     "/give @a[team=red] stone_sword 1"
   ]
 
 team_two:
+  teleport: false
   x: 0
   y: 100
   z: 0
 
   id: blue
 
-  defaults: [
+  enable_cmd: false
+  commands: [
     "/give @a[team=blue] stone_sword 1"
   ]
 
