@@ -26,7 +26,7 @@ public class startCmd implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         int count = this.plugin.getConfig().getInt("startCmd.countdown");
 
-        timer t = new timer(count, this.plugin);
+        timer t = new timer(count, this.plugin, true);
         BukkitTask task = Bukkit.getScheduler().runTaskTimer(this.plugin, t, 0L, 20L);
         t.setTask(task);
         return true;
