@@ -1,4 +1,4 @@
-package com.nekozouneko.nekopvp.nekopvp.util;
+package com.nekozouneko.nekopvp.util;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

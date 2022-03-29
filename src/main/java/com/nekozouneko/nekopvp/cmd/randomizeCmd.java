@@ -1,6 +1,6 @@
-package com.nekozouneko.nekopvp.nekopvp.cmd;
+package com.nekozouneko.nekopvp.cmd;
 
-import com.nekozouneko.nekopvp.nekopvp.NekoPvP;
+import com.nekozouneko.nekopvp.NekoPvP;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -9,7 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
 import java.util.ArrayList;

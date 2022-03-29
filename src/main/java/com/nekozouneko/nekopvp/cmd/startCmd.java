@@ -1,14 +1,12 @@
-package com.nekozouneko.nekopvp.nekopvp.cmd;
+package com.nekozouneko.nekopvp.cmd;
 
-import com.nekozouneko.nekopvp.nekopvp.NekoPvP;
-import com.nekozouneko.nekopvp.nekopvp.util.timer;
+import com.nekozouneko.nekopvp.NekoPvP;
+import com.nekozouneko.nekopvp.util.timer;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.ArrayList;

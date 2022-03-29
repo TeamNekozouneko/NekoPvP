@@ -1,13 +1,13 @@
-package com.nekozouneko.nekopvp.nekopvp.util;
+package com.nekozouneko.nekopvp.util;
 
-import com.nekozouneko.nekopvp.nekopvp.NekoPvP;
+import com.nekozouneko.nekopvp.NekoPvP;
+
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
-
-import java.util.List;
 
 public class actionbar implements Runnable{
 

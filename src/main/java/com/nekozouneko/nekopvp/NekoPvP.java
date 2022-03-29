@@ -1,7 +1,7 @@
-package com.nekozouneko.nekopvp.nekopvp;
+package com.nekozouneko.nekopvp;
 
-import com.nekozouneko.nekopvp.nekopvp.cmd.*;
-import com.nekozouneko.nekopvp.nekopvp.listener.deathListener;
+import com.nekozouneko.nekopvp.cmd.*;
+import com.nekozouneko.nekopvp.listener.deathListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class NekoPvP extends JavaPlugin {

@@ -1,6 +1,6 @@
-package com.nekozouneko.nekopvp.nekopvp.listener;
+package com.nekozouneko.nekopvp.listener;
 
-import com.nekozouneko.nekopvp.nekopvp.NekoPvP;
+import com.nekozouneko.nekopvp.NekoPvP;
 import org.bukkit.GameMode;
 import org.bukkit.event.*;
 import org.bukkit.event.entity.PlayerDeathEvent;

@@ -1,6 +1,6 @@
-package com.nekozouneko.nekopvp.nekopvp.cmd;
+package com.nekozouneko.nekopvp.cmd;
 
-import com.nekozouneko.nekopvp.nekopvp.NekoPvP;
+import com.nekozouneko.nekopvp.NekoPvP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
