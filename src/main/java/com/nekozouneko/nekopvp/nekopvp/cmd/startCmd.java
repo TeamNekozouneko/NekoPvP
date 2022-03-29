@@ -24,12 +24,7 @@ public class startCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        int count;
-        if (args.length == 0) {
-            count = 10;
-        } else {
-            count = Integer.parseInt(args[0]);
-        }
+        int count = this.plugin.getConfig().getInt("startCmd.countdown");
 
         timer t = new timer(count, this.plugin);
         BukkitTask task = Bukkit.getScheduler().runTaskTimer(this.plugin, t, 0L, 20L);
@@ -39,14 +34,6 @@ public class startCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 1) {
-            return Arrays.asList(args[0] + "0", args[0] + "1",
-                    args[0] + "2", args[0] + "3",
-                    args[0] + "4", args[0] + "5",
-                    args[0] + "6", args[0] + "7",
-                    args[0] + "8", args[0] + "9");
-        } else {
-            return new ArrayList<>();
-        }
+        return new ArrayList<>();
     }
 }
