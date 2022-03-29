@@ -1,9 +1,9 @@
 # +-----------------------------+
-# |  ゲーム設定 - Game Settings   |
+# |  ゲーム設定 - Game Settings |
 # +-----------------------------+
 
 startCmd:
-  coutdown: 10
+  countdown: 10
 
 onDied:
   # 死亡時設定 - onDied Settings
@@ -26,7 +26,7 @@ onDied:
   value: "SPECTATOR"
 
 # +-----------------------------+
-# |  チーム設定 - Team Settings   |
+# |  チーム設定 - Team Settings |
 # +-----------------------------+
 
 team_one:
@@ -52,7 +52,7 @@ team_two:
   ]
 
 # +-----------------------------+
-# |  翻訳設定 - trans. settings  |
+# |  翻訳設定 - trans. settings |
 # +-----------------------------+
 
 translate:
