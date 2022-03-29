@@ -29,7 +29,7 @@ public class countdownCmd implements CommandExecutor, TabCompleter {
             count = Integer.parseInt(args[0]);
         }
 
-        timer t = new timer(count, this.plugin);
+        timer t = new timer(count, this.plugin, false);
         BukkitTask task = Bukkit.getScheduler().runTaskTimer(this.plugin, t, 0L, 20L);
         t.setTask(task);
         return true;
