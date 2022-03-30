@@ -1,6 +1,6 @@
 name: NekoPvP
 description: "攻城戦やPvP向けのプラグインです。 "
-url: "https://nekozouneko.com/discord/"
+website: "https://nekozouneko.com/discord/"
 version: '${project.version}'
 main: com.nekozouneko.nekopvp.NekoPvP
 api-version: 1.18
@@ -17,7 +17,7 @@ commands:
     description: "プラグインコマンド"
     permission: NekoPvP.cmd.nekopvp
     permission-message: "§c権限が不足しています。"
-    usage: "/<command> reload"
+    usage: "/<command> <help|reload>"
   randomize:
     aliases: ["振り分け", "random-team"]
     description: "チームの振り分けを実行します。"
@@ -31,7 +31,7 @@ commands:
     permission-message: "§c権限が不足しています。"
     usage: "/<command>"
   countdown:
-    aliases: ["カウントダウン"]
+    aliases: ["カウントダウン", "timer"]
     description: "カウントダウンを実行します。"
     permission: NekoPvP.cmd.countdown
     permission-message: "§c権限が不足しています。"
