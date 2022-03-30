@@ -1,9 +1,11 @@
 package com.nekozouneko.nekopvp.listener;
 
 import com.nekozouneko.nekopvp.NekoPvP;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.event.*;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.scoreboard.Scoreboard;
 
 public class deathListener implements Listener {
 
@@ -14,7 +16,22 @@ public class deathListener implements Listener {
 
     @EventHandler
     public void onKilled(PlayerDeathEvent e) {
+        Scoreboard score = Bukkit.getScoreboardManager().getMainScoreboard();
         if (this.plugin.getConfig().getBoolean("onDied.enabled")) {
+            if (score.getTeam(this.plugin.getConfig().getString("team_one.id")) != null) {
+                if (score.getTeam(this.plugin.getConfig().getString("team_one.id"))
+                        .getEntries().contains(e.getEntity().getName()) &&
+                        !this.plugin.getConfig().getBoolean("team_one.onDiedTrigger")) {
+                    return;
+                }
+            }
+            if (score.getTeam(this.plugin.getConfig().getString("team_two.id")) != null) {
+                if (score.getTeam(this.plugin.getConfig().getString("team_two.id"))
+                        .getEntries().contains(e.getEntity().getName()) &&
+                        !this.plugin.getConfig().getBoolean("team_two.onDiedTrigger")) {
+                    return;
+                }
+            }
             switch (this.plugin.getConfig().getString("onDied.triggered")) {
                 case "GAMEMODE" -> {
                     switch (this.plugin.getConfig().getString("onDied.value")) {
@@ -28,7 +45,7 @@ public class deathListener implements Listener {
                 case "COMMAND" -> {
                     try {
                         e.getEntity().performCommand(this.plugin.getConfig().getString("onDied.value"));
-                    } catch (Exception er) {}
+                    } catch (Exception ignored) {}
                 }
                 default -> {}
             }
