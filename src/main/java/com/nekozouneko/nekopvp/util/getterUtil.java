@@ -85,4 +85,24 @@ public class getterUtil {
         return names;
     }
 
+    public static String toColorCode(String cp, String str) {
+        return str.replaceAll(cp+"a", "§a").replaceAll(cp+"A", "§a")
+                .replaceAll(cp+"b", "§b").replaceAll(cp+"B", "§b")
+                .replaceAll(cp+"c", "§c").replaceAll(cp+"C", "§c")
+                .replaceAll(cp+"d", "§d").replaceAll(cp+"D", "§d")
+                .replaceAll(cp+"e", "§e").replaceAll(cp+"E", "§e")
+                .replaceAll(cp+"f", "§f").replaceAll(cp+"F", "§f")
+                .replaceAll(cp+"k", "§k").replaceAll(cp+"K", "§k")
+                .replaceAll(cp+"l", "§l").replaceAll(cp+"L", "§l")
+                .replaceAll(cp+"m", "§m").replaceAll(cp+"M", "§m")
+                .replaceAll(cp+"n", "§n").replaceAll(cp+"N", "§n")
+                .replaceAll(cp+"o", "§o").replaceAll(cp+"O", "§o")
+                .replaceAll(cp+"r", "§r").replaceAll(cp+"R", "§r")
+                .replaceAll(cp+"0", "§0").replaceAll(cp+"1", "§1")
+                .replaceAll(cp+"2", "§2").replaceAll(cp+"3", "§3")
+                .replaceAll(cp+"4", "§4").replaceAll(cp+"5", "§5")
+                .replaceAll(cp+"6", "§6").replaceAll(cp+"7", "§7")
+                .replaceAll(cp+"8", "§8").replaceAll(cp+"9", "§9");
+    }
+
 }
