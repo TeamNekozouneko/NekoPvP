@@ -1,5 +1,8 @@
+# 編集しないで
+ConfigVersion: 0
+
 # +-----------------------------+
-# |  ゲーム設定 - Game Settings |
+# |  ゲーム設定 - Game Settings   |
 # +-----------------------------+
 
 startCmd:
@@ -26,10 +29,12 @@ onDied:
   value: "SPECTATOR"
 
 # +-----------------------------+
-# |  チーム設定 - Team Settings |
+# |  チーム設定 - Team Settings   |
 # +-----------------------------+
 
 team_one:
+  onDiedTrigger: false
+
   teleport: false
   x: 0
   y: 100
@@ -43,6 +48,8 @@ team_one:
   ]
 
 team_two:
+  onDiedTrigger: false
+
   teleport: false
   x: 0
   y: 100
@@ -56,7 +63,7 @@ team_two:
   ]
 
 # +-----------------------------+
-# |  翻訳設定 - trans. settings |
+# |  翻訳設定 - trans. settings   |
 # +-----------------------------+
 
 translate:
