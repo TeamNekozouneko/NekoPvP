@@ -31,13 +31,14 @@ public class timer implements Runnable {
                 }
 
                 Scoreboard score = Bukkit.getScoreboardManager().getMainScoreboard();
-                if (this.plugin.getConfig().getBoolean("team_one.teleport")) {
+
+                if (this.plugin.getConfig().getBoolean("team_one.teleport") && score.getTeam(this.plugin.getConfig().getString("team_one.id")) != null) {
                     for (Player p : getterUtil.getNameToPlayer(score.getTeam(this.plugin.getConfig().getString("team_one.id")).getEntries())) {
                         p.teleport(new Location(p.getWorld(), this.plugin.getConfig().getDouble("team_one.x"), this.plugin.getConfig().getDouble("team_one.y"), this.plugin.getConfig().getDouble("team_one.z")));
                     }
                 }
 
-                if (this.plugin.getConfig().getBoolean("team_two.teleport")) {
+                if (this.plugin.getConfig().getBoolean("team_two.teleport") && score.getTeam(this.plugin.getConfig().getString("team_two.id")) != null) {
                     for (Player p : getterUtil.getNameToPlayer(score.getTeam(this.plugin.getConfig().getString("team_two.id")).getEntries())) {
                         p.teleport(new Location(p.getWorld(), this.plugin.getConfig().getDouble("team_two.x"), this.plugin.getConfig().getDouble("team_two.y"), this.plugin.getConfig().getDouble("team_two.z")));
                     }
