@@ -62,3 +62,5 @@ team_two:
 translate:
   start: "ゲーム開始"
   actionbar: "%online%人がオンライン / 赤チーム §c%TeamOne_online%§f 青チーム §9%TeamTwo_online%"
+  prefix: "&b[&fNekoPvP&b] &f"
+  reloaded: "設定ファイルを再読み込みしました。"
