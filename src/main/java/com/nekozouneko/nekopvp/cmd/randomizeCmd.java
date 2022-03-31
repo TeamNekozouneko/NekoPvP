@@ -24,6 +24,7 @@ public class randomizeCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // /scoreboard で管理できるやつ
         Scoreboard score = Bukkit.getScoreboardManager().getMainScoreboard();
 
         String one_name = this.plugin.getConfig().getString("team_one.id");

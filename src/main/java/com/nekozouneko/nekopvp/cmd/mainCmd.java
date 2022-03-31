@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class mainCmd implements CommandExecutor, TabCompleter {
@@ -14,17 +15,20 @@ public class mainCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // /np reloadなら
         if (args[0].equalsIgnoreCase("reload")) {
             this.plugin.reloadConfig();
             sender.sendMessage(getterUtil.toColorCode("&",this.plugin.getConfig().getString("translate.prefix"))+getterUtil.toColorCode("&", this.plugin.getConfig().getString("translate.reloaded")));
         } else {
-            sender.sendMessage("NekoPvP");
+            // それ以外
+            sender.sendMessage("§c未実装です。");
         }
         return true;
     }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
-        return null;
+        // 空白にしとく
+        return new ArrayList<>();
     }
 }

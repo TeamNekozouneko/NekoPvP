@@ -65,6 +65,11 @@ public class getterUtil {
         return players;
     }
 
+    /**
+     * プレイヤーリストからプレイヤー名リストに変換
+     * @param players プレイヤー名リスト
+     * @return
+     */
     public static List<String> toPlayerNames(Player[] players) {
         List<String> names = new ArrayList<>();
 
@@ -75,6 +80,11 @@ public class getterUtil {
         return names;
     }
 
+    /**
+     * プレイヤーリストからプレイヤー名リストに変換
+     * @param players プレイヤー名リスト
+     * @return
+     */
     public static List<String> toPlayerNames(List<Player> players) {
         List<String> names = new ArrayList<>();
 
@@ -85,6 +95,12 @@ public class getterUtil {
         return names;
     }
 
+    /**
+     * cpをカラーコードに変換
+     * @param cp §からカラーコードに置き換えするもの
+     * @param str テキスト
+     * @return
+     */
     public static String toColorCode(String cp, String str) {
         return str.replaceAll(cp+"a", "§a").replaceAll(cp+"A", "§a")
                 .replaceAll(cp+"b", "§b").replaceAll(cp+"B", "§b")

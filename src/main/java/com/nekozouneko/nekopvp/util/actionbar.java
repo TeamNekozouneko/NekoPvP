@@ -15,20 +15,28 @@ public class actionbar implements Runnable{
 
     @Override
     public void run() {
+        // /scoreboardで管理できるようにする
         Scoreboard score = Bukkit.getScoreboardManager().getMainScoreboard();
 
+        // アクションバーのテキスト取得
         String showText = this.plugin.getConfig().getString("translate.actionbar");
+        // オンライン人数に置き換え
         showText = showText.replaceAll("%online%", ""+ Bukkit.getOnlinePlayers().size());
 
+        // null対策のtry
         try {
+            // チーム1のオンライン
             showText = showText.replaceAll("%TeamOne_online%", ""+getterUtil.getNameToPlayer(score.getTeam(this.plugin.getConfig().getString("team_one.id")).getEntries()).size());
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
 
+        // null対策のtry
         try {
+            // チーム2のオンライン
             showText = showText.replaceAll("%TeamTwo_online%", ""+getterUtil.getNameToPlayer(score.getTeam(this.plugin.getConfig().getString("team_two.id")).getEntries()).size());
-        } catch (Exception e) {}
+        } catch (Exception ignored) {}
 
         for (Player p : Bukkit.getOnlinePlayers()) {
+            // 全員にアクションバーを送信
             p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(showText));
         }
     }

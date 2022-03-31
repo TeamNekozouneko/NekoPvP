@@ -22,16 +22,21 @@ public class startCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        // カウントダウン秒数
         int count = this.plugin.getConfig().getInt("startCmd.countdown");
 
+        // タイマーのインスタンスを作成
         timer t = new timer(count, this.plugin, true);
+        // タスク作成
         BukkitTask task = Bukkit.getScheduler().runTaskTimer(this.plugin, t, 0L, 20L);
+        // タスクを自らキャンセルできるようにする
         t.setTask(task);
         return true;
     }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        // 空白
         return new ArrayList<>();
     }
 }

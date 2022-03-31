@@ -21,11 +21,15 @@ public class teambarCmd implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (this.NowBar) {
+            // バーが出てないことにする
             NowBar = false;
 
+            // タスクキャンセル
             actionTask.cancel();
         } else {
+            // バーが出てることにする
             NowBar = true;
+            // タスク作成
             actionTask = Bukkit.getScheduler().runTaskTimer(this.plugin, new actionbar(), 0L, 10L);
         }
         return true;
@@ -33,6 +37,7 @@ public class teambarCmd implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        // 空白
         return new ArrayList<>();
     }
 }
