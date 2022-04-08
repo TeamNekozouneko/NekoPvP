@@ -4,6 +4,8 @@ import com.nekozouneko.nekopvp.cmd.*;
 import com.nekozouneko.nekopvp.listener.deathListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.nekozouneko.nplib.NPLib;
+
 public final class NekoPvP extends JavaPlugin {
 
     public static NekoPvP instance;
