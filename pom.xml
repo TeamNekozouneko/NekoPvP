@@ -61,10 +61,6 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-        <repository>
-            <id>nekorepo</id>
-            <url>https://nekozouneko.ddns.net/nexus/repository/nekorepo/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -73,11 +69,6 @@
             <artifactId>spigot-api</artifactId>
             <version>1.18.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.nekozouneko.nplib</groupId>
-            <artifactId>nplib</artifactId>
-            <version>1.3-rc1</version>
         </dependency>
     </dependencies>
 </project>

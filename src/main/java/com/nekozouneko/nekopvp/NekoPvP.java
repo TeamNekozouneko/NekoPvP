@@ -4,8 +4,6 @@ import com.nekozouneko.nekopvp.cmd.*;
 import com.nekozouneko.nekopvp.listener.deathListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.nekozouneko.nplib.NPLib;
-
 public final class NekoPvP extends JavaPlugin {
 
     public static NekoPvP instance;
@@ -22,7 +20,6 @@ public final class NekoPvP extends JavaPlugin {
     public void onEnable() {
         // もしconfig.ymlが存在しないなら生成させる
         saveDefaultConfig();
-
         // コマンドを登録
         getCommand("start").setExecutor(new startCmd());
         getCommand("nekopvp").setExecutor(new mainCmd());
