@@ -27,12 +27,6 @@ public class timer implements Runnable {
         if (this.second <= 0) {
             // /startによる起動なら
             if (this.isGame) {
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    // 全員にタイトルと音声を再生
-                    p.sendTitle(" ", this.plugin.getConfig().getString("translate.start"), 5, 60, 5);
-                    p.playSound(p, Sound.BLOCK_ANVIL_DESTROY, 1L, 1L);
-                }
-
                 // /scoreboardで管理できるスコアボードを取得
                 Scoreboard score = Bukkit.getScoreboardManager().getMainScoreboard();
 
@@ -48,6 +42,12 @@ public class timer implements Runnable {
                     for (Player p : getterUtil.getNameToPlayer(score.getTeam(this.plugin.getConfig().getString("team_two.id")).getEntries())) {
                         p.teleport(new Location(p.getWorld(), this.plugin.getConfig().getDouble("team_two.x"), this.plugin.getConfig().getDouble("team_two.y"), this.plugin.getConfig().getDouble("team_two.z")));
                     }
+                }
+
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    // 全員にタイトルと音声を再生
+                    p.sendTitle(" ", this.plugin.getConfig().getString("translate.start"), 5, 60, 5);
+                    p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_DESTROY, 1L, 1L);
                 }
 
                 // チーム1でコマンド実行が有効化されてるなら
@@ -69,7 +69,7 @@ public class timer implements Runnable {
             } else {
                 for (Player p:Bukkit.getOnlinePlayers()) {
                     p.sendTitle(" ", String.valueOf(second), 0, 60, 5);
-                    p.playSound(p, Sound.UI_BUTTON_CLICK, 1L,1L);
+                    p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 1L,1L);
                 }
                 this.task.cancel();
             }
@@ -77,7 +77,7 @@ public class timer implements Runnable {
             for (Player p:Bukkit.getOnlinePlayers()) {
                 // 全員にカウントダウンを送信
                 p.sendTitle(" ", String.valueOf(second), 0, 60, 0);
-                p.playSound(p, Sound.UI_BUTTON_CLICK, 1L,1L);
+                p.playSound(p.getLocation(), Sound.UI_BUTTON_CLICK, 1L,1L);
             }
         }
 

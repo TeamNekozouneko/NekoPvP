@@ -3,7 +3,7 @@ description: "攻城戦やPvP向けのプラグインです。 "
 website: "https://nekozouneko.com/discord/"
 version: '${project.version}'
 main: com.nekozouneko.nekopvp.NekoPvP
-api-version: 1.18
+api-version: 1.13
 authors: [ Taitaitatata ]
 commands:
   start:
